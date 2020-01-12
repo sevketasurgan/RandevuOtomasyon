@@ -35,9 +35,7 @@
             this.txtsoyisim = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
-            this.txttarih = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
-            this.txtsaat = new System.Windows.Forms.TextBox();
             this.label6 = new System.Windows.Forms.Label();
             this.txtkilo = new System.Windows.Forms.TextBox();
             this.btnEkle = new System.Windows.Forms.Button();
@@ -80,6 +78,9 @@
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.label11 = new System.Windows.Forms.Label();
             this.bolumlerTableAdapter = new HastahaneRandevuProje.randevusistemDataSet3TableAdapters.bolumlerTableAdapter();
+            this.maskedTextBoxSaat = new System.Windows.Forms.MaskedTextBox();
+            this.maskedTextBoxTarih = new System.Windows.Forms.MaskedTextBox();
+            this.maskedTextBoxBoy = new System.Windows.Forms.MaskedTextBox();
             ((System.ComponentModel.ISupportInitialize)(this.randevusistemDataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.randevularBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
@@ -145,13 +146,6 @@
             this.label4.TabIndex = 7;
             this.label4.Text = "TARİH";
             // 
-            // txttarih
-            // 
-            this.txttarih.Location = new System.Drawing.Point(99, 173);
-            this.txttarih.Name = "txttarih";
-            this.txttarih.Size = new System.Drawing.Size(116, 20);
-            this.txttarih.TabIndex = 6;
-            // 
             // label5
             // 
             this.label5.AutoSize = true;
@@ -161,13 +155,6 @@
             this.label5.Size = new System.Drawing.Size(39, 13);
             this.label5.TabIndex = 9;
             this.label5.Text = "SAAT";
-            // 
-            // txtsaat
-            // 
-            this.txtsaat.Location = new System.Drawing.Point(99, 210);
-            this.txtsaat.Name = "txtsaat";
-            this.txtsaat.Size = new System.Drawing.Size(116, 20);
-            this.txtsaat.TabIndex = 8;
             // 
             // label6
             // 
@@ -228,7 +215,7 @@
             // 
             // txtboy
             // 
-            this.txtboy.Location = new System.Drawing.Point(99, 300);
+            this.txtboy.Location = new System.Drawing.Point(323, 35);
             this.txtboy.Name = "txtboy";
             this.txtboy.Size = new System.Drawing.Size(116, 20);
             this.txtboy.TabIndex = 16;
@@ -514,6 +501,32 @@
             // 
             this.bolumlerTableAdapter.ClearBeforeFill = true;
             // 
+            // maskedTextBoxSaat
+            // 
+            this.maskedTextBoxSaat.Location = new System.Drawing.Point(98, 210);
+            this.maskedTextBoxSaat.Mask = "00:00";
+            this.maskedTextBoxSaat.Name = "maskedTextBoxSaat";
+            this.maskedTextBoxSaat.Size = new System.Drawing.Size(117, 20);
+            this.maskedTextBoxSaat.TabIndex = 32;
+            this.maskedTextBoxSaat.ValidatingType = typeof(System.DateTime);
+            // 
+            // maskedTextBoxTarih
+            // 
+            this.maskedTextBoxTarih.Location = new System.Drawing.Point(99, 170);
+            this.maskedTextBoxTarih.Mask = "00/00/0000";
+            this.maskedTextBoxTarih.Name = "maskedTextBoxTarih";
+            this.maskedTextBoxTarih.Size = new System.Drawing.Size(117, 20);
+            this.maskedTextBoxTarih.TabIndex = 33;
+            this.maskedTextBoxTarih.ValidatingType = typeof(System.DateTime);
+            // 
+            // maskedTextBoxBoy
+            // 
+            this.maskedTextBoxBoy.Location = new System.Drawing.Point(98, 297);
+            this.maskedTextBoxBoy.Mask = "0.00";
+            this.maskedTextBoxBoy.Name = "maskedTextBoxBoy";
+            this.maskedTextBoxBoy.Size = new System.Drawing.Size(117, 20);
+            this.maskedTextBoxBoy.TabIndex = 34;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 13F);
@@ -522,13 +535,15 @@
             this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.BackColor = System.Drawing.Color.DarkBlue;
             this.ClientSize = new System.Drawing.Size(1334, 581);
+            this.Controls.Add(this.maskedTextBoxBoy);
+            this.Controls.Add(this.maskedTextBoxTarih);
+            this.Controls.Add(this.maskedTextBoxSaat);
             this.Controls.Add(this.label11);
             this.Controls.Add(this.textBox1);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.comboBoxDokİsim);
             this.Controls.Add(this.comboBoxCinsiyet);
             this.Controls.Add(this.comboBoxBolum);
-            this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.label10);
             this.Controls.Add(this.label9);
             this.Controls.Add(this.label8);
@@ -541,14 +556,13 @@
             this.Controls.Add(this.label6);
             this.Controls.Add(this.txtkilo);
             this.Controls.Add(this.label5);
-            this.Controls.Add(this.txtsaat);
             this.Controls.Add(this.label4);
-            this.Controls.Add(this.txttarih);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.txtsoyisim);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.txtisim);
+            this.Controls.Add(this.dataGridView1);
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.MaximizeBox = false;
             this.MinimizeBox = false;
@@ -579,9 +593,7 @@
         private System.Windows.Forms.TextBox txtsoyisim;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.TextBox txttarih;
         private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.TextBox txtsaat;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.TextBox txtkilo;
         private System.Windows.Forms.Button btnEkle;
@@ -624,6 +636,9 @@
         private randevusistemDataSet3 randevusistemDataSet3;
         private System.Windows.Forms.BindingSource bolumlerBindingSource;
         private randevusistemDataSet3TableAdapters.bolumlerTableAdapter bolumlerTableAdapter;
+        private System.Windows.Forms.MaskedTextBox maskedTextBoxSaat;
+        private System.Windows.Forms.MaskedTextBox maskedTextBoxTarih;
+        private System.Windows.Forms.MaskedTextBox maskedTextBoxBoy;
     }
 }
 

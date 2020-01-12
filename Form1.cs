@@ -36,7 +36,7 @@ namespace HastahaneRandevuProje
         }
         void temizle()
         {
-           comboBoxDokİsim.Text = comboBoxBolum.Text = txtboy.Text = comboBoxCinsiyet.Text =  txtisim.Text = txtkilo.Text = txtsaat.Text = txtsoyisim.Text = txttarih.Text = txtyas.Text = "";
+           comboBoxDokİsim.Text = comboBoxBolum.Text = maskedTextBoxBoy.Text = comboBoxCinsiyet.Text =  txtisim.Text = txtkilo.Text = maskedTextBoxSaat.Text = txtsoyisim.Text = maskedTextBoxTarih.Text = txtyas.Text = "";
             btnEkle.Text = "Ekle";
             btnSil.Enabled = false;
             model.id = 0;
@@ -74,7 +74,7 @@ namespace HastahaneRandevuProje
         
         private void btnEkle_Click(object sender, EventArgs e)
         {
-            double boyy = Convert.ToDouble(txtboy.Text);
+            double boyy = Convert.ToDouble(maskedTextBoxBoy.Text);
             double kilo = Convert.ToDouble(txtkilo.Text);
             double vkihesap = kilo / (boyy * 2);
             
@@ -88,9 +88,9 @@ namespace HastahaneRandevuProje
             model.cinsiyet = comboBoxCinsiyet.Text.Trim();
             model.doktorisim = comboBoxDokİsim.Text;
             model.kilo = txtkilo.Text.Trim();
-            model.tarih = txttarih.Text.Trim();
-            model.saat = txtsaat.Text.Trim();
-            model.boy = txtboy.Text.Trim();
+            model.tarih = maskedTextBoxTarih.Text;
+            model.saat = maskedTextBoxSaat.Text;//textbox  maskedtextbox ile değişti
+            model.boy = maskedTextBoxBoy.Text;
             model.vki = Convert.ToInt32(vkihesap).ToString();
             model.yas = txtyas.Text.Trim();
             model.value = val;
@@ -130,14 +130,14 @@ namespace HastahaneRandevuProje
                     model = db.randevulars.Where(x => x.id == model.id).FirstOrDefault();
                     
                         comboBoxBolum.Text = model.bolum;
-                        txtboy.Text = model.boy;
+                        maskedTextBoxBoy.Text = model.boy;
                         comboBoxCinsiyet.Text = model.cinsiyet;
                         comboBoxDokİsim.Text = model.doktorisim;
                         txtisim.Text = model.isim;
                         txtkilo.Text = model.kilo;
-                        txtsaat.Text = model.saat;
+                        maskedTextBoxSaat.Text = model.saat;
                         txtsoyisim.Text = model.soyisim;
-                        txttarih.Text = model.tarih;
+                        maskedTextBoxTarih.Text = model.tarih;
                         txtyas.Text = model.yas;
                         val = model.value; // value değerini tutuyoruz.dgvDoktor da filtreleme için.
                         
