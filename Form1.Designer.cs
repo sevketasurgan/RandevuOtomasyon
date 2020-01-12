@@ -42,7 +42,6 @@
             this.btnSil = new System.Windows.Forms.Button();
             this.btniptal = new System.Windows.Forms.Button();
             this.label7 = new System.Windows.Forms.Label();
-            this.txtboy = new System.Windows.Forms.TextBox();
             this.label8 = new System.Windows.Forms.Label();
             this.txtyas = new System.Windows.Forms.TextBox();
             this.label9 = new System.Windows.Forms.Label();
@@ -213,13 +212,6 @@
             this.label7.TabIndex = 17;
             this.label7.Text = "BOY";
             // 
-            // txtboy
-            // 
-            this.txtboy.Location = new System.Drawing.Point(323, 35);
-            this.txtboy.Name = "txtboy";
-            this.txtboy.Size = new System.Drawing.Size(116, 20);
-            this.txtboy.TabIndex = 16;
-            // 
             // label8
             // 
             this.label8.AutoSize = true;
@@ -290,6 +282,7 @@
             this.cinsiyet});
             this.dataGridView1.GridColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.dataGridView1.Location = new System.Drawing.Point(230, 61);
+            this.dataGridView1.MultiSelect = false;
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.ReadOnly = true;
             this.dataGridView1.Size = new System.Drawing.Size(1101, 487);
@@ -549,7 +542,6 @@
             this.Controls.Add(this.label8);
             this.Controls.Add(this.txtyas);
             this.Controls.Add(this.label7);
-            this.Controls.Add(this.txtboy);
             this.Controls.Add(this.btniptal);
             this.Controls.Add(this.btnSil);
             this.Controls.Add(this.btnEkle);
@@ -600,7 +592,6 @@
         private System.Windows.Forms.Button btnSil;
         private System.Windows.Forms.Button btniptal;
         private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.TextBox txtboy;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.TextBox txtyas;
         private System.Windows.Forms.Label label9;
